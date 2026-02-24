@@ -1,4 +1,4 @@
-# Web de Nombre y apellido
+# Web de Miquel
 
 Este proyecto es una web de tipo...
 
