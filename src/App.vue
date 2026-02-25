@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
+import NavegadorDatos from './components/NavegadorDatos.vue';
 
 
 
@@ -8,6 +9,7 @@ import { RouterView } from 'vue-router';
 <template>
   <main>   
     <RouterView />
+    
   </main>
 </template>
 
