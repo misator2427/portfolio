@@ -26,11 +26,11 @@ import NavegadorDatos from '@/components/NavegadorDatos.vue';
 
         <h1>Datos page</h1>
 
-        <section class="h-200 bg-amber-200"  id="vehiculis"> Vehiculo </section>
+        <section class="h-200 bg-amber-200"  id="vehiculis"> Estudios </section>
 
-        <section class="h-200 bg-blue-200"  id="videre"> Abama </section>
+        <section class="h-200 bg-blue-200"  id="videre"> Habilidades </section>
 
-        <section class="h-200 bg-red-300"   id="contactus"> Vehiculo </section>
+        <section class="h-200 bg-red-300"   id="contactus"> Información Relevante </section>
 
     </div>
 

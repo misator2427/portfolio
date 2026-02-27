@@ -51,16 +51,10 @@ const menuItems = [
 
 <template>
 
-    <nav class="bg-white">
+    <nav class="bg-white ">
         <NavigationMenu>
                 <NavigationMenuList>
-                    <NavigationMenuItem> 
-                        <!-- Los menu items son los botoncitos de la web -->
-                        
-                    
-                        <NavigationMenuLink>Link</NavigationMenuLink>
-                        
-                    </NavigationMenuItem>
+                   
 
                     <!-- aqui añade todo lo de la lista de arriba -->
 
