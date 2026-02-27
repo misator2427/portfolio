@@ -23,7 +23,7 @@
             </p>
         </header>
     </div>
-
+<!-- aqi yo tengo mis rutas, y donde van viene marcado por el router link, el resto son creando los botones. Ojo que coincida el nombre que le he pueesto en el index con el que llamo -->
     <div class= "bg-blue-200 flex h-300">
         <header class="botones">
             <div class="z-10">
@@ -38,7 +38,10 @@
                 <Button variant="destructive" class="mr-2 bg-[rgb(27,182,246)] md:py-5 md:px-6 md:text-lg hover:bg-[rgba(24,182,0.7)] transition-all">
                 <RouterLink to="/datos"> Datos </RouterLink>
                 </Button>
-
+                
+                 <Button variant="destructive" class="mr-2 bg-[rgb(27,182,246)] md:py-5 md:px-6 md:text-lg hover:bg-[rgba(24,182,0.7)] transition-all">
+                <RouterLink to="/contacto"> Contacto </RouterLink>
+                </Button>
                 
             </div>
 
