@@ -4,7 +4,6 @@ import Home from "@/pages/home/Home.vue";
 import Otros from "@/pages/Otros/Otros.vue";
 import DescripcionInicial from "@/pages/Trabajos/DescripcionInicial.vue";
 import LibreriaTrabajos from "@/pages/Trabajos/LibreriaTrabajos.vue";
-import Trabajos from "@/pages/Trabajos/Trabajos.vue";
 import TrabajosDetalle from "@/pages/Trabajos/TrabajosDetalle.vue";
 import TrabajosNav from "@/pages/Trabajos/TrabajosNav.vue";
 import { createRouter, createWebHashHistory } from "vue-router";
@@ -24,11 +23,7 @@ export const router = createRouter({
     {
       path: '/trabajos',
       children: [
-        {
-          path: '',
-          name: 'trabajos',
-          component: Trabajos 
-        },
+        
         {
           path: 'about', 
           component: TrabajosNav,

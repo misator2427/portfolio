@@ -4,22 +4,29 @@ import Button from '@/components/ui/button/Button.vue';
 import Card from '@/components/ui/card/Card.vue';
 import CardContent from '@/components/ui/card/CardContent.vue';
 
+import CarrusImaginum from '@/components/CarrusImaginum.vue';
+
+
+const photos = ["justice", "arkham", "superman", "varios", "villana", "villano", "grupo", "robin", "anne", "joker", "resplandor", "cat", "gafas", "league", "fondoVerde"]; 
+
 
 
 </script>
 
 <template>
 
-     <div
-        class="min-h-screen w-full text-white"
-        style="
-            background-image: url('/Imágenes/Benifallim/Benifallim.webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        "
-    >
+    <div class="relative min-h-screen w-full text-white overflow-x-hidden">
+
+        <div class="fixed inset-0 -z-10">
+            <CarrusImaginum 
+                :photos="photos"
+                basePath="/imagines/batman"
+                :auto-play-delay="2000"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+     
 
         <!-- OVERLAY OSCURO -->
         <div class="min-h-screen w-full bg-black/40">
@@ -41,6 +48,7 @@ import CardContent from '@/components/ui/card/CardContent.vue';
 
                 </header>
             </div>
+
             
             
             <!-- aqi yo tengo mis rutas, y donde van viene marcado por el router link, el resto son creando los botones. Ojo que coincida el nombre que le he pueesto en el index con el que llamo -->
@@ -78,7 +86,7 @@ import CardContent from '@/components/ui/card/CardContent.vue';
                         <!-- tarjeta de trabajos -->
                         <Card 
                             class="cursor-pointer w-[220px] h-[240px] mr-1 bg-[rgb(27,182,246)] md:py-5 md:px-6 md:text-lg hover:bg-[rgba(24,182,0.7)] transition-all hover:scale-105"
-                            @click="$router.push(`/trabajos`)"
+                            @click="$router.push(`/trabajos/about`)"
                         >
 
                             <CardContent class="flex flex-col items-center justify-start h-full pt-0.5">

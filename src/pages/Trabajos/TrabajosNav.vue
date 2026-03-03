@@ -7,7 +7,7 @@
 <template>
     <div class="grid grid-rows-[auto_1fr_auto] min-h-screen">
 
-        <header class="bg-[#ffde00] w-full border border-black">
+        <header class="bg-[#6ecd51] w-full border border-black">
 
             <div class="flex flex-col md:flex-row items-center justify-between p-3 mx-auto max-w-[1400px] md:px-20">
                 
@@ -16,17 +16,17 @@
                 <div class="flex gap-6 pt-3">
 
                     <RouterLink to="/trabajos/gallery" active-class="font-bold">
-                        Characters
+                        Galería de trabajos
                     </RouterLink>
 
                     <RouterLink to="/trabajos/about" active-class="font-bold">
-                        About
+                        Sobre los trabajos
                     </RouterLink>
 
-                    <Button variant="tertiarius" size="elongatis" class="bg-[#ee3133] hover:bg-[#ffde00] focus:bg-[#ffde00]">
+                    <Button variant="tertiarius" size="elongatis" class="bg-[#5fe2f0] hover:bg-[#6ecd51] focus:bg-[#6ecd51]">
 
                     <RouterLink to="/trabajos">
-                        Exit
+                        Home
                     </RouterLink>
 
                     </Button>
@@ -45,9 +45,9 @@
             <RouterView />
         </main>
 
-        <footer class="text-center bg-[#ffde00] w-full border border-black py-6">
+        <footer class="text-center bg-[#6ecd51] w-full border border-black py-6">
            <div>
-                <strong>All Rights Reserved</strong> - Oh Lord Matt Groening - 1989-2023
+                <strong>All Rights Reserved</strong> 
             </div>
 
             <small>

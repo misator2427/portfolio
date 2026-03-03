@@ -20,26 +20,25 @@ interface MenuItems {
     onClick?: () => void
 }
 
+
+
 const menuItems = [
+  
+  
   {
-    label: 'Portada',
-    href: '#',
-    onClick: () => scrollToSection('#')
+    label: 'Estudios',
+    href: '#estudios',
+    onClick: () => scrollToSection('#estudios')
   },
   {
-    label: 'Vehiculis',
-    href: '#vehiculis',
-    onClick: () => scrollToSection('#vehiculis')
+    label: 'Habilidades',
+    href: '#habilidades',
+    onClick: () => scrollToSection('#habilidades')
   },
   {
-    label: 'Imágenes',
-    href: '#videre',
-    onClick: () => scrollToSection('#videre')
-  },
-  {
-    label: 'Contacto',
-    href: '#contactus',
-    onClick: () => scrollToSection('#contactus')
+    label: 'Información Relevante',
+    href: '#info',
+    onClick: () => scrollToSection('#info')
   },
 ]
 
@@ -52,6 +51,9 @@ const menuItems = [
 <template>
 
     <nav class="bg-white ">
+
+        
+
         <NavigationMenu>
                 <NavigationMenuList>
                    

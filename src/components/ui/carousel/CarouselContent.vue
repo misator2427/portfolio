@@ -1,0 +1,34 @@
+<script setup lang="ts">
+import type { WithClassAsProps } from "./interface"
+import { cn } from "@/lib/utils"
+import { useCarousel } from "./useCarousel"
+
+defineOptions({
+  inheritAttrs: false,
+})
+
+const props = defineProps<WithClassAsProps>()
+
+const { carouselRef, orientation } = useCarousel()
+
+</script>
+
+<template>
+  <div
+    ref="carouselRef"
+    data-slot="carousel-content"
+    class="overflow-hidden w-screen h-screen"
+  >
+    <div
+      :class="
+        cn(
+          'flex w-screen h-screen',
+          orientation === 'horizontal' ? '' : 'flex-col',
+          props.class,
+        )"
+      v-bind="$attrs"
+    >
+      <slot />
+    </div>
+  </div>
+</template>

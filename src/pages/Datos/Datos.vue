@@ -20,17 +20,27 @@ import NavegadorDatos from '@/components/NavegadorDatos.vue';
 
 
 <template>
+
+     
+
+
+
+
+
     <div class="Personal">
 
         <NavegadorDatos />
 
-        <h1>Datos page</h1>
+           
 
-        <section class="h-200 bg-amber-200"  id="vehiculis"> Estudios </section>
+        
+        <section class="h-screen bg-amber-200"  id="estudios"> Estudios </section>
 
-        <section class="h-200 bg-blue-200"  id="videre"> Habilidades </section>
+        <section class="h-screen bg-blue-200"  id="habilidades"> Habilidades </section>
 
-        <section class="h-200 bg-red-300"   id="contactus"> Información Relevante </section>
+        <section class="h-screen bg-red-300"   id="info"> Información Relevante </section>
+
+       
 
     </div>
 
