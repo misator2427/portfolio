@@ -55,7 +55,7 @@ const menuItems = [
         
 
         <NavigationMenu>
-                <NavigationMenuList>
+                <NavigationMenuList class="flex justiy-end sm:flex-row">
                    
 
                     <!-- aqui añade todo lo de la lista de arriba -->
@@ -65,9 +65,10 @@ const menuItems = [
                                     :href="item.href"
                                     @click.prevent="item.onClick ? item.onClick() : null"
                                     >
-                                        <NavigationMenuLink>
+                                        <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-[#6A5ACD] hover:text-white']">
         
-                                        {{item.label}}
+                                         {{item.label}}
+
                                         </NavigationMenuLink>
                                     </a>  
                                     

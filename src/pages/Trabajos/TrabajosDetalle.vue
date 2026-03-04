@@ -30,7 +30,7 @@ const character = ref<Character | undefined>(
                 </p>
                         
                 <div class="arca-quote"
-                @click="router.push('/simpsons/gallery')"
+                @click="router.push('/trabajos/gallery')"
                 >
                     <p class="quote"> 
                         {{ character.quote }}
