@@ -12,6 +12,10 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 export const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
+
+  scrollBehavior() {
+    return { top: 0 }
+  },
 // aqui yo tengo mis rutas, se añaden mas desde aqui, y luego ya cambio lo que sea donde las llame, en este caso estas van desde home a las otras
   routes: [
     {

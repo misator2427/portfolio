@@ -17,13 +17,14 @@ const photos = ["justice", "arkham", "superman", "varios", "villana", "villano",
 
     <div class="relative min-h-screen w-full text-white overflow-x-hidden">
 
-        <div class="fixed inset-0 -z-10">
+        <div class="fixed inset-0 -z-10 flex items-center">
             <CarrusImaginum 
                 :photos="photos"
                 basePath="/imagines/batman"
                 :auto-play-delay="2000"
-                class="w-full h-full object-cover"
+                class="carousel-bg"
             />
+        
         </div>
 
      
@@ -71,7 +72,7 @@ const photos = ["justice", "arkham", "superman", "varios", "villana", "villano",
 
                                 <div class="w-full flex justify-center">
                                     <img 
-                                        src="/Imágenes/Nah.webp"
+                                        src="/Imágenes/Benifallim/Benifallim.webp"
                                         alt="Otros"
                                         class="max-w-full max-h-full object-contain rounded-md"
                                     >
@@ -98,7 +99,7 @@ const photos = ["justice", "arkham", "superman", "varios", "villana", "villano",
 
                                 <div class="w-full flex justify-center">
                                     <img 
-                                        src="/Imágenes/Marshall.webp"
+                                        src="/Imágenes/Benifallim/Benifallim.webp"
                                         alt="Trabajos"
                                         class="max-w-full max-h-full object-contain rounded-md"
                                     >
@@ -124,7 +125,7 @@ const photos = ["justice", "arkham", "superman", "varios", "villana", "villano",
 
                                 <div class="w-full flex justify-center">
                                     <img 
-                                        src="/Imágenes/Speed.jpg"
+                                        src="/Imágenes/Benifallim/Benifallim.webp"
                                         alt="Datos"
                                         class="max-w-full max-h-full object-contain rounded-md"
                                     >
@@ -151,7 +152,7 @@ const photos = ["justice", "arkham", "superman", "varios", "villana", "villano",
 
                                 <div class="w-full flex justify-center">
                                     <img 
-                                        src="/Imágenes/Ballin.jpg"
+                                        src="/Imágenes/Benifallim/Benifallim.webp"
                                         alt="Contacto"
                                         class="max-w-full max-h-full object-contain rounded-md"
                                     >

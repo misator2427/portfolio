@@ -38,34 +38,34 @@ const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
 
         <div class="text-center">
             <h1 class="font-bold text-xl lg:text-5xl mb-5">
-                The Simpsons Quote App
+                GALERÍA DE TRABAJOS
             </h1>
 
-            <p class="mb-4">Click on the quote of your favorite character</p>
+            <p class="mb-4">Selecciona un trabajo para verlo en detalle</p>
 
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mx-auto">
-             
-            <Card 
-                class="cursor-pointer w-[220px] h-[240px] hover:bg-[#ee3133] hover:text-white transition-colors"
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
+
+            <div
                 v-for="character in listaSimpsons"
                 :key="character.id"
-                >
+                class="gallery-item"
+                @click="$router.push(`/trabajos/gallery/${ character.id }`)"
+            >
 
-                <CardContent 
-                    class="flex flex-col items-center gap-1 w-full px-0"
-                    @click="$router.push(`/trabajos/gallery/${ character.id }`)"
-                >
-                        <img 
-                        :src="`/imagines/simpsons/${ character.imago }`" 
-                        alt=""
-                        class="w-48 h-42 object-cover object-top mt-2 bg-[#ffde00] rounded-t-md border border-black"
-                        >
-                        <h2 class="font-medium text-lg">{{ character.nomen }}</h2>
+                <img 
+                    :src="`/imagines/simpsons/${ character.imago }`"
+                    class="gallery-image"
+                />
 
-                </CardContent>
-            </Card>
+                <div class="gallery-overlay">
+                    <h2 class="gallery-title">
+                        {{ character.nomen }}
+                    </h2>
+                </div>
+
+            </div>
 
         </div>
 
@@ -76,7 +76,7 @@ const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
                 :class="['px-4 py-2 rounded-md font-medium transition-colors',
                     nuncPagina === 1
                     ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                    : 'bg-[#ffde00] hover:bg-[#ee3133] hover:text-white'
+                    : 'bg-[#6ecd51] hover:bg-[#5fe2f0] hover:text-white'
 
                 ]"
             >
@@ -89,8 +89,8 @@ const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
                 @click="ireAdPaginam(pagina)"
                 :class="['w-10 h-10 rounded-md font-medium transition-colors ', 
                     nuncPagina === pagina
-                     ? 'bg-[#ee3133] text-white'
-                        :'bg-[#ffde00]  hover:hover:bg-[#ee3133] hover:text-white'
+                     ? 'bg-[#5fe2f0] text-white'
+                        :'bg-[#6ecd51]  hover:hover:bg-[#5fe2f0] hover:text-white'
                 ]"
             >
                 {{ pagina }}
@@ -102,7 +102,7 @@ const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
                 :class="['px-4 py-2 rounded-md font-medium transition-colors',
                     nuncPagina === totalPaginae
                     ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                    : 'bg-[#ffde00] hover:bg-[#ee3133] hover:text-white'
+                    : 'bg-[#6ecd51] hover:bg-[#5fe2f0] hover:text-white'
 
                 ]"
             >
@@ -120,5 +120,84 @@ const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
 
 
 <style scoped>
+
+/* para las imagenes */
+
+.gallery-item{
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    cursor: pointer;
+
+    /* aparece suave */
+    animation: aparecer 0.6s ease;
+}
+
+/* imagen como tal */
+
+.gallery-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* se hace gris, como en mi home */
+
+.gallery-overlay{
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0,0,0,0.35);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+
+
+.gallery-title{
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+
+.gallery-item:hover .gallery-image{
+
+    
+    transform: scale(1.05);
+
+    
+    filter: grayscale(40%) brightness(70%);
+}
+
+.gallery-item:hover .gallery-overlay{
+    opacity: 1;
+}
+
+/* para que "aparezca" */
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+
+}
 
 </style>

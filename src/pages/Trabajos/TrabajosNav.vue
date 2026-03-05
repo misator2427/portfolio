@@ -7,9 +7,9 @@
 <template>
     <div class="grid grid-rows-[auto_1fr_auto] min-h-screen">
 
-        <header class="bg-[#6ecd51] w-full border border-black">
+        
 
-            <div class="flex flex-col md:flex-row items-center justify-between p-3 mx-auto max-w-[1400px] md:px-20">
+            <div class="flex flex-col-reverse md:flex-row items-center justify-end p-3 mx-auto max-w-[1400px] md:px-20">
                 
             
 
@@ -39,13 +39,13 @@
            
 
 
-        </header>
+        
 
         <main>
             <RouterView />
         </main>
 
-        <footer class="text-center bg-[#6ecd51] w-full border border-black py-6">
+        <footer class="text-center bg-[#c0e7b4] w-full border border-black py-6">
            <div>
                 <strong>All Rights Reserved</strong> 
             </div>

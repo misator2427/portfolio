@@ -60,14 +60,59 @@ import NavegadorDatos from '@/components/NavegadorDatos.vue';
 
         <NavegadorDatos />
 
-           
+        <div class="bg-red-300 fixed inset-0 -z-10 flex items-center"> </div>   
+
+        <section class="h-screen "  id="estudios"> 
+
+            <h1 class="order-1 lg:order-2 w-full lg:w-1/2 text-right lg:text-left text-3xl md:text-7xl lg:text-8xl font-bold transition-all">
+                <span>Miquel</span>
+                <br>
+                <!-- br es un salto de línea -->
+                <span>Satorre Santonja</span>
+
+                <p class="text-lg md:text-3xl transition-all mt-4">
+                    Esta es una web de presentación de Miquel Satorre Santonja.
+                </p>
+            </h1>
+            
+
+        </section>
+
+
+        <section class="h-screen "  id="habilidades"> 
+
+            <h1 class="order-1 lg:order-2 w-full lg:w-1/2 text-right lg:text-left text-3xl md:text-7xl lg:text-8xl font-bold transition-all">
+                <span>Miquel</span>
+                <br>
+                <!-- br es un salto de línea -->
+                <span>Satorre Santonja</span>
+
+                <p class="text-lg md:text-3xl transition-all mt-4">
+                    Esta es una web de presentación de Miquel Satorre Santonja.
+                </p>
+            </h1>
+
+
+        </section>
+
+        <section class="h-screen "   id="info"> 
+
+            <h1 class="order-1 lg:order-2 w-full lg:w-1/2 text-right lg:text-left text-3xl md:text-7xl lg:text-8xl font-bold transition-all">
+                <span>Miquel</span>
+                <br>
+                <!-- br es un salto de línea -->
+                <span>Satorre Santonja</span>
+
+                <p class="text-lg md:text-3xl transition-all mt-4">
+                    Esta es una web de presentación de Miquel Satorre Santonja.
+                </p>
+            </h1>
+
+
+        </section>
 
         
-        <section class="h-screen bg-amber-200"  id="estudios"> Estudios </section>
-
-        <section class="h-screen bg-blue-200"  id="habilidades"> Habilidades </section>
-
-        <section class="h-screen bg-red-300"   id="info"> Información Relevante </section>
+        
 
        
 
@@ -79,5 +124,36 @@ import NavegadorDatos from '@/components/NavegadorDatos.vue';
 
 
 <style> 
+
+#estudios {
+  /* aparece suave */
+    animation: aparecer 0.6s ease;
+}
+
+#habilidades {
+  /* aparece suave */
+    animation: aparecer 0.6s ease;
+}
+
+#info {
+  /* aparece suave */
+    animation: aparecer 0.6s ease;
+}
+
+/* para que "aparezca" */
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+
+}
 
 </style>
