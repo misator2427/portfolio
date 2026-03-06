@@ -7,6 +7,39 @@ import CardContent from '@/components/ui/card/CardContent.vue';
 import CarrusImaginum from '@/components/CarrusImaginum.vue';
 
 
+// para controlar lo que me muevo en la pantalla
+
+import { onMounted } from "vue";
+
+onMounted(() => {
+
+  const secciones = document.querySelectorAll(".seccion");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible");
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.75
+    }
+  );
+
+  secciones.forEach((sec) => observer.observe(sec));
+
+});
+
+
+
 const photos = ["justice", "arkham", "superman", "varios", "villana", "villano", "grupo", "robin", "anne", "joker", "resplandor", "cat", "gafas", "league", "fondoVerde"]; 
 
 
@@ -33,7 +66,7 @@ const photos = ["justice", "arkham", "superman", "varios", "villana", "villano",
         <div class="min-h-screen w-full bg-black/40">
     
 
-            <div class="h-screen p-10 flex items-end">
+            <section class="seccion h-screen p-10 flex items-end" id="texto">
                 <header class="presentación w-full">
 
                     <h1 class="text-2xl md:text-7xl lg:text-8xl font-bold md:pb-15 z-10 transition-all">
@@ -48,12 +81,12 @@ const photos = ["justice", "arkham", "superman", "varios", "villana", "villano",
                     </h1>
 
                 </header>
-            </div>
+            </section>
 
             
             
             <!-- aqi yo tengo mis rutas, y donde van viene marcado por el router link, el resto son creando los botones. Ojo que coincida el nombre que le he pueesto en el index con el que llamo -->
-            <div class= " flex h-screen items-center row justify-center">
+            <section class= "seccion flex h-screen items-center row justify-center" id="tarjetas">
                 <header class="botones">
                     <div class="z-10 grid grid-cols-2 gap-x-150 gap-y-50 items-center text-2xl ">
 
@@ -176,15 +209,33 @@ const photos = ["justice", "arkham", "superman", "varios", "villana", "villano",
 
                     
                 </header>
-            </div>
+            </section>
         </div>
     </div>
 </template>
 
 <style scoped>
-    h1{
-        font-family: Rubik 
-    }
+
+h1{
+    font-family: Rubik 
+}
+
+    
+.seccion{
+
+  opacity: 0;
+  transform: translateY(40px);
+
+  transition: all 0.7s ease;
+
+}
+
+.seccion.visible{
+
+  opacity: 1;
+  transform: translateY(0);
+
+}
 
 
 </style>
