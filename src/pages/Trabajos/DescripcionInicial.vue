@@ -16,11 +16,11 @@
 
         <div class="flex flex-col gap-4 order-1 text-center lg:text-left">
 
-            <h1 class="font-bold text-xl lg:text-5xl mb-5"> 
+            <h1 class="font-bold text-xl lg:text-5xl mb-5 texto-aparece"> 
                Sobre los trabajos
             </h1>
             <!-- texto como tal -->
-            <div class="lg:max-w-3xl">
+            <div class="lg:max-w-3xl texto-aparece-delay">
                 <p class="mb-5">
                     Hola
                 </p>
@@ -44,5 +44,30 @@
 
 
 <style scoped>
+
+/* para que "aparezca" */
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+
+}
+
+.texto-aparece{
+    animation: aparecer 0.6s ease;
+}
+
+.texto-aparece-delay{
+    animation: aparecer 0.6s ease 0.2s;
+    animation-fill-mode: both;
+}
 
 </style>

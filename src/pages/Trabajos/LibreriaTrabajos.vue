@@ -37,12 +37,13 @@ const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
     <div class="flex flex-col items-center justify-center gap-8 w-full max-w-350 my-8 mx-auto">
 
         <div class="text-center">
-            <h1 class="font-bold text-xl lg:text-5xl mb-5">
+            <h1 class="font-bold text-xl lg:text-5xl mb-5 texto-aparece">
                 GALERÍA DE TRABAJOS
             </h1>
 
-            <p class="mb-4">Selecciona un trabajo para verlo en detalle</p>
-
+            <p class="mb-4 texto-aparece-delay">
+                Selecciona un trabajo para verlo en detalle
+            </p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
@@ -198,6 +199,15 @@ const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
         transform: translateY(0);
     }
 
+}
+
+.texto-aparece{
+    animation: aparecer 0.6s ease;
+}
+
+.texto-aparece-delay{
+    animation: aparecer 0.6s ease 0.2s;
+    animation-fill-mode: both;
 }
 
 </style>

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-
-import { Card, CardContent } from '@/components/ui/card'
 import {
   Carousel,
   CarouselContent,
@@ -27,77 +25,50 @@ const props = withDefaults(defineProps<Props>(), {
 
 const api = ref()
 
-function setApi(val:any){
+function setApi(val: any) {
   api.value = val
 }
 
-function nextSkill(){
-
-  if(!api.value) return
-
+function nextSkill() {
+  if (!api.value) return
   api.value.scrollNext()
-
 }
-
 </script>
 
-
 <template>
-
-<Carousel
-  class="w-full max-w-md md:max-w-2xl lg:max-w-4xl"
-  :opts="{
-    loop: props.loop,
-    dragFree: props.dragFree
-  }"
-  @init-api="setApi"
->
-
-  <CarouselContent>
-
-    <CarouselItem
-      v-for="(skill, index) in props.skills"
-      :key="index"
-    >
-
-      <div class="p-2">
-
-        <Card
-          class="border-none cursor-pointer"
+  <Carousel
+    class="w-full overflow-hidden"
+    :opts="{
+      loop: props.loop,
+      dragFree: props.dragFree
+    }"
+    @init-api="setApi"
+  >
+    <CarouselContent class="w-full">
+      <CarouselItem
+        v-for="(skill, index) in props.skills"
+        :key="index"
+        class="basis-full min-w-0"
+      >
+        <div
+          class="w-full border border-black/20 px-6 py-6 md:px-8 md:py-8 cursor-pointer bg-white/30"
           @click="nextSkill"
         >
+          <h3 class="text-2xl font-bold mb-4">
+            {{ skill.title }}
+          </h3>
 
-          <CardContent
-            class="flex flex-col aspect-[6/4] items-start justify-center gap-6 p-10"
-          >
-
-            <h3 class="text-3xl font-bold">
-              {{ skill.title }}
-            </h3>
-
-            <p class="text-lg text-gray-600 max-w-2xl">
-              {{ skill.description }}
-            </p>
-
-          </CardContent>
-
-        </Card>
-
-      </div>
-
-    </CarouselItem>
-
-  </CarouselContent>
-
-</Carousel>
-
+          <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+            {{ skill.description }}
+          </p>
+        </div>
+      </CarouselItem>
+    </CarouselContent>
+  </Carousel>
 </template>
 
-
 <style scoped>
-
-:deep(.embla){
+:deep(.embla) {
   overflow: hidden;
 }
-
 </style>

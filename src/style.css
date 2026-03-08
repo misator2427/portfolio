@@ -1,8 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+
 @font-face {
-  font-family:Rubik;
-  src:url("../fuentes/Rubik-VariableFont_wght.ttf")
+  font-family:Aleo;
+  src:url("../fuentes/Aleo-VariableFont_wght.ttf")
+}
+
+body {
+  font-family: "Aleo";
 }
 
 @custom-variant dark (&:is(.dark *));

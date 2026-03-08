@@ -1,6 +1,6 @@
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import type { DateValue } from 'reka-ui';
 import { Label } from '@/components/ui/label'
 import { Calendar } from '@/components/ui/calendar'
@@ -21,41 +21,46 @@ import {
 import { Phone, Mail, MapPin, X, Instagram, Linkedin, InstagramIcon, MessageCircle, Menu, MenuIcon } from 'lucide-vue-next';
 
 
+onMounted(() => {
+
+    const secciones = document.querySelectorAll(".seccion")
+
+    const observer = new IntersectionObserver(
+    (entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+        entry.target.classList.add("visible")
+        } else {
+        entry.target.classList.remove("visible")
+        }
+
+    })
+
+    },
+    {
+        threshold: 0.75
+    }
+    )
+
+    secciones.forEach((sec) => observer.observe(sec))
+
+})
+
+
 const dias = ref<DateValue> ()
 
 </script>
 
 <template>
 
-  <header class="bg-[#6ecd51] w-full border border-black">
 
-    <div class="flex flex-col md:flex-row items-center justify-between p-3 mx-auto max-w-[1400px] md:px-20">
-        
-    
+<section id="Lugar" class="seccion w-full py-12 bg-gray-100 h-screen">
 
-        <div class="flex gap-6 pt-3">
-
-            
-
-            <Button variant="tertiarius" size="elongatis" class="bg-[#5fe2f0] hover:bg-[#6ecd51] focus:bg-[#6ecd51]">
-
-            <RouterLink to="/trabajos">
-                Home
-            </RouterLink>
-
-            </Button>
-
-
-        </div>
-
-    </div>
-
-    
-
-
-</header>
-
-<section id="Lugar" class="w-full py-12 bg-gray-100 h-screen">
+  <RouterLink to="/" class="absolute top-6 left-10 text-lg font-semibold hover:underline">
+    Home
+  </RouterLink>
 
   <div class="container mx-auto max-w-5xl px-4">
 
@@ -63,7 +68,7 @@ const dias = ref<DateValue> ()
           
     <div class="flex lg:flex-row gap-8 ">
 
-      <h1 class="text-1xl md:text-7xl lg:text-8xl font-bold md:pb-15 z-10 transition-all">
+      <h1 class="text-1xl md:text-7xl lg:text-8xl font-bold md:pb-15 z-10 transition-all texto-aparece">
         <span>Miquel</span>
         <br>
         <!-- br es un salto de línea -->
@@ -75,7 +80,7 @@ const dias = ref<DateValue> ()
       </h1>
 
       <!-- Mapa de Google Maps -->
-      <div class="hidden lg:block w-full lg:w-1/2 rounded-lg overflow-hidden shadow-lg">
+      <div class="hidden lg:block w-full lg:w-1/2 rounded-lg overflow-hidden shadow-lg texto-aparece-delay">
         <div class="aspect-square">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24910.002153592683!2d-0.4990140953267379!3d38.70058034303596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1772616610408!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -86,10 +91,10 @@ const dias = ref<DateValue> ()
   </div>
 </section>
 
-<section id="Contacto" class="w-full py-12 bg-gray-100 min-h-screen flex items-center">
+<section id="Contacto" class="seccion w-full py-12 bg-gray-100 min-h-screen flex items-center">
   <div class="container mx-auto max-w-5xl px-4 flex flex-col lg:flex-row items-start gap-12">
 
-    <h1 class="order-1 lg:order-2 w-full lg:w-1/2 text-right lg:text-left text-3xl md:text-7xl lg:text-8xl font-bold transition-all">
+    <h1 class="order-1 lg:order-2 w-full lg:w-1/2 text-right lg:text-left text-3xl md:text-7xl lg:text-8xl font-bold transition-all texto-aparece">
         <span>Miquel</span>
         <br>
         <!-- br es un salto de línea -->
@@ -102,7 +107,7 @@ const dias = ref<DateValue> ()
 
 
 <!-- Formulario -->
-    <div class="order-2 lg:order-1 w-full lg:w-1/2">
+    <div class="order-2 lg:order-1 w-full lg:w-1/2 texto-aparece-delay">
       <form  class="space-y-6 bg-white p-8 rounded-2xl shadow-xl w-full">
         <div class="space-y-2">
               <Label for="nomen">Nombre</Label>
@@ -228,5 +233,17 @@ const dias = ref<DateValue> ()
 
 
 <style scoped>
+
+.seccion{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.7s ease;
+}
+
+.seccion.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
 
 </style>

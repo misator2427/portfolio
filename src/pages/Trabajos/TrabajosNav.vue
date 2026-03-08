@@ -2,14 +2,14 @@
 
 </script>
 
-<!-- esto es el header y footer de simpsons, lo de arriba y lo de abajo -->
-<!-- aqui controla la navegacion de la pagina simpsons -->
+
+<!-- aqui controla la navegacion de los trabajos -->
 <template>
     <div class="grid grid-rows-[auto_1fr_auto] min-h-screen">
 
         
 
-            <div class="flex flex-col-reverse md:flex-row items-center justify-end p-3 mx-auto max-w-[1400px] md:px-20">
+            <div >
                 
             
 
@@ -23,7 +23,7 @@
                         Sobre los trabajos
                     </RouterLink>
 
-                    <Button variant="tertiarius" size="elongatis" class="bg-[#5fe2f0] hover:bg-[#6ecd51] focus:bg-[#6ecd51]">
+                    <Button variant="tertiarius" size="elongatis">
 
                     <RouterLink to="/trabajos">
                         Home
@@ -45,15 +45,7 @@
             <RouterView />
         </main>
 
-        <footer class="text-center bg-[#c0e7b4] w-full border border-black py-6">
-           <div>
-                <strong>All Rights Reserved</strong> 
-            </div>
-
-            <small>
-                En proceso por Miquel Satorre
-            </small>
-        </footer>
+        
 
     </div>
 </template>

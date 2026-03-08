@@ -4,7 +4,7 @@ import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { characters, type Character } from './data';
 
-// La pagina de cada personaje
+// pagina del trabajo en detalle
 
 const route = useRoute()
 

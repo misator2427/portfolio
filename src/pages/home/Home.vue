@@ -1,19 +1,20 @@
 <script lang="ts" setup>
-import Button from '@/components/ui/button/Button.vue';
+import Button from '@/components/ui/button/Button.vue'
 
-import Card from '@/components/ui/card/Card.vue';
-import CardContent from '@/components/ui/card/CardContent.vue';
+import Card from '@/components/ui/card/Card.vue'
+import CardContent from '@/components/ui/card/CardContent.vue'
 
-import CarrusImaginum from '@/components/CarrusImaginum.vue';
+import CarrusImaginum from '@/components/CarrusImaginum.vue'
 
+import { onMounted } from "vue"
+import { useRouter } from "vue-router"
 
-// para controlar lo que me muevo en la pantalla
+const router = useRouter()
 
-import { onMounted } from "vue";
-
+// animación al aparecer en pantalla
 onMounted(() => {
 
-  const secciones = document.querySelectorAll(".seccion");
+  const secciones = document.querySelectorAll(".seccion")
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -21,28 +22,64 @@ onMounted(() => {
       entries.forEach((entry) => {
 
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          entry.target.classList.add("visible")
         } else {
-          entry.target.classList.remove("visible");
+          entry.target.classList.remove("visible")
         }
 
-      });
+      })
 
     },
     {
       threshold: 0.75
     }
-  );
+  )
 
-  secciones.forEach((sec) => observer.observe(sec));
+  secciones.forEach((sec) => observer.observe(sec))
 
-});
+})
 
+const photos = [
+    "justice",
+    "arkham",
+    "superman",
+    "varios",
+    "villana",
+    "villano",
+    "grupo",
+    "robin",
+    "anne",
+    "joker",
+    "resplandor",
+    "cat",
+    "gafas",
+    "league",
+    "fondoVerde"
+]
 
-
-const photos = ["justice", "arkham", "superman", "varios", "villana", "villano", "grupo", "robin", "anne", "joker", "resplandor", "cat", "gafas", "league", "fondoVerde"]; 
-
-
+// tarjetas mas limpio
+const cards = [
+    {
+    title: "Otros",
+    route: "/otros",
+    image: "/Imágenes/Benifallim/Benifallim.webp"
+    },
+    {
+    title: "Trabajos",
+    route: "/trabajos/about",
+    image: "/Imágenes/Benifallim/Benifallim.webp"
+    },
+    {
+    title: "Datos",
+    route: "/datos",
+    image: "/Imágenes/Benifallim/Benifallim.webp"
+    },
+    {
+    title: "Contacto",
+    route: "/contacto",
+    image: "/Imágenes/Benifallim/Benifallim.webp"
+    }
+]
 
 </script>
 
@@ -50,192 +87,104 @@ const photos = ["justice", "arkham", "superman", "varios", "villana", "villano",
 
     <div class="relative min-h-screen w-full text-white overflow-x-hidden">
 
-        <div class="fixed inset-0 -z-10 flex items-center">
-            <CarrusImaginum 
-                :photos="photos"
-                basePath="/imagines/batman"
-                :auto-play-delay="2000"
-                class="carousel-bg"
-            />
-        
-        </div>
-
-     
-
-        <!-- OVERLAY OSCURO -->
-        <div class="min-h-screen w-full bg-black/40">
-    
-
-            <section class="seccion h-screen p-10 flex items-end" id="texto">
-                <header class="presentación w-full">
-
-                    <h1 class="text-2xl md:text-7xl lg:text-8xl font-bold md:pb-15 z-10 transition-all">
-                        <span>Miquel</span>
-                        <br>
-                        <!-- br es un salto de línea -->
-                        <span>Satorre Santonja</span>
-
-                        <p class="text-lg md:text-3xl transition-all mt-4">
-                            Esta es una web de presentación de Miquel Satorre Santonja.
-                        </p>
-                    </h1>
-
-                </header>
-            </section>
-
-            
-            
-            <!-- aqi yo tengo mis rutas, y donde van viene marcado por el router link, el resto son creando los botones. Ojo que coincida el nombre que le he pueesto en el index con el que llamo -->
-            <section class= "seccion flex h-screen items-center row justify-center" id="tarjetas">
-                <header class="botones">
-                    <div class="z-10 grid grid-cols-2 gap-x-150 gap-y-50 items-center text-2xl ">
-
-                        
-                        <!-- tarjeta de otros -->
-                        <Card 
-                            class="cursor-pointer w-[220px] h-[240px] mr-1 bg-[rgb(27,182,246)] md:py-5 md:px-6 md:text-lg hover:bg-[rgba(24,182,0.7)] transition-all hover:scale-105"
-                            @click="$router.push(`/otros`)"
-                        >
-
-                            <CardContent class="flex flex-col items-center justify-start h-full pt-0.5">
-
-                                <h2 class="text-xl font-semibold text-center"> 
-                                    Otros 
-                                </h2>
-
-                                <div class="w-full flex justify-center">
-                                    <img 
-                                        src="/Imágenes/Benifallim/Benifallim.webp"
-                                        alt="Otros"
-                                        class="max-w-full max-h-full object-contain rounded-md"
-                                    >
-                                </div>
-
- 
-
-                            </CardContent>
-
-                        </Card>
-
-                        <!-- tarjeta de trabajos -->
-                        <Card 
-                            class="cursor-pointer w-[220px] h-[240px] mr-1 bg-[rgb(27,182,246)] md:py-5 md:px-6 md:text-lg hover:bg-[rgba(24,182,0.7)] transition-all hover:scale-105"
-                            @click="$router.push(`/trabajos/about`)"
-                        >
-
-                            <CardContent class="flex flex-col items-center justify-start h-full pt-0.5">
-
-                                
-                                <h2 class="text-xl font-semibold text-center"> 
-                                    Trabajos 
-                                </h2>
-
-                                <div class="w-full flex justify-center">
-                                    <img 
-                                        src="/Imágenes/Benifallim/Benifallim.webp"
-                                        alt="Trabajos"
-                                        class="max-w-full max-h-full object-contain rounded-md"
-                                    >
-                                </div>
-
-                            </CardContent>
-
-                        </Card>
-
-                        <!-- tarjeta de datos -->
-                        <Card 
-                            class="cursor-pointer w-[220px] h-[240px] mr-1 bg-[rgb(27,182,246)] md:py-5 md:px-6 md:text-lg hover:bg-[rgba(24,182,0.7)] transition-all hover:scale-105"
-                            @click="$router.push(`/datos`)"
-                        >
-
-                            <CardContent class="flex flex-col items-center justify-start h-full pt-0.5">
-
-                                
-
-                                <h2 class="text-xl font-semibold text-center"> 
-                                    Datos 
-                                </h2>
-
-                                <div class="w-full flex justify-center">
-                                    <img 
-                                        src="/Imágenes/Benifallim/Benifallim.webp"
-                                        alt="Datos"
-                                        class="max-w-full max-h-full object-contain rounded-md"
-                                    >
-                                </div>
-
-                            </CardContent>
-
-                        </Card>
-
-                        <!-- tarjeta de contacto -->
-
-                        <Card 
-                            class="cursor-pointer w-[220px] h-[240px] mr-1 bg-[rgb(27,182,246)] md:py-5 md:px-6 md:text-lg hover:bg-[rgba(24,182,0.7)] transition-all hover:scale-105"
-                            @click="$router.push(`/contacto`)"
-                        >
-
-                            <CardContent class="flex flex-col items-center justify-start h-full pt-0.5">
-
-                               
-
-                                <h2 class="text-xl font-semibold text-center">
-                                    Contacto
-                                </h2>
-
-                                <div class="w-full flex justify-center">
-                                    <img 
-                                        src="/Imágenes/Benifallim/Benifallim.webp"
-                                        alt="Contacto"
-                                        class="max-w-full max-h-full object-contain rounded-md"
-                                    >
-                                </div>
-
-                            </CardContent>
-
-                        </Card>
-
-                        
-
-                        
-
-                        
-
-                        
-                        
-                        
-                        
-                    </div>
-
-                    
-                </header>
-            </section>
-        </div>
+    <!-- fondo carrusel -->
+    <div class="fixed inset-0 -z-10">
+        <CarrusImaginum 
+        :photos="photos"
+        basePath="/imagines/batman"
+        :auto-play-delay="2000"
+        class="carousel-bg"
+        />
     </div>
+
+    <div class="min-h-screen w-full bg-black/40">
+
+<!-- parte inicial -->
+
+    <section class="seccion h-screen p-10 flex items-end" id="texto">
+
+        <header class="w-full">
+
+            <h1 class="text-2xl md:text-7xl lg:text-8xl font-bold md:pb-15 z-10 transition-all font-[Rubik]">
+
+                <span>Miquel</span>
+                    <br>
+                <span>Satorre Santonja</span>
+
+                <p class="text-lg md:text-3xl transition-all mt-4">
+                    Esta es una web de presentación de Miquel Satorre Santonja.
+                </p>
+
+            </h1>
+
+        </header>
+
+    </section>
+
+<!-- tarjetas de las secciones -->
+
+    <section class="seccion flex h-screen items-center justify-center" id="tarjetas">
+
+        <header>
+
+            <div class="z-10 grid grid-cols-2 gap-16 items-center text-2xl">
+
+                <Card
+                    v-for="card in cards"
+                    :key="card.route"
+                    class="cursor-pointer transition-all hover:scale-105 w-[200px] bg-black/60 backdrop-blur-[4px] rounded-[10px] overflow-hidden hover:shadow-[0_10px_25px_rgba(0,0,0,0.6)]"
+                    @click="router.push(card.route)"
+                    >
+
+                    <CardContent class="p-0 flex flex-col items-center">
+
+        <!-- titulo de las tarjetas -->
+
+                        <div class="w-full text-center font-semibold text-[1.2rem] p-[8px] bg-white/10">
+                         {{ card.title }}
+                        </div>
+
+    <!-- la imagen adaptada -->
+
+                        <div class="w-full p-[10px] flex justify-center items-center">
+
+                            <img 
+                            :src="card.image"
+                            :alt="card.title"
+                            class="max-w-full h-auto object-contain"
+                            />
+
+                        </div>
+
+                    </CardContent>
+
+                </Card>
+
+            </div>
+
+        </header>
+
+    </section>
+
+    </div>
+
+    </div>
+
 </template>
 
 <style scoped>
 
-h1{
-    font-family: Rubik 
-}
+    .seccion{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.7s ease;
+    }
+
+    .seccion.visible{
+    opacity:1;
+    transform:translateY(0);
+    }
 
     
-.seccion{
-
-  opacity: 0;
-  transform: translateY(40px);
-
-  transition: all 0.7s ease;
-
-}
-
-.seccion.visible{
-
-  opacity: 1;
-  transform: translateY(0);
-
-}
-
 
 </style>

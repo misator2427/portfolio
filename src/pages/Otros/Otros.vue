@@ -1,34 +1,14 @@
 <template>
 
-<header class="bg-[#6ecd51] w-full border border-black">
+<div>
 
-    <div class="flex flex-col md:flex-row items-center justify-between p-3 mx-auto max-w-[1400px] md:px-20">
-        
-    
+    <RouterLink to="/" class="absolute top-6 left-10 text-lg font-semibold hover:underline">
+        Home
+    </RouterLink>
 
-        <div class="flex gap-6 pt-3">
-
-            
-
-            <Button variant="tertiarius" size="elongatis" class="bg-[#5fe2f0] hover:bg-[#6ecd51] focus:bg-[#6ecd51]">
-
-            <RouterLink to="/trabajos">
-                Home
-            </RouterLink>
-
-            </Button>
+</div>
 
 
-        </div>
-
-    </div>
-
-    
-
-
-</header>
-
-<h1>Otros page</h1>
 
     
 </template>

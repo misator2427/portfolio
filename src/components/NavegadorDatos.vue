@@ -1,136 +1,71 @@
 <script setup lang="ts">
 
-
-
 import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-  NavigationMenuTrigger,
-  NavigationMenuContent,
+NavigationMenu,
+NavigationMenuItem,
+NavigationMenuLink,
+NavigationMenuList,
+navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
-import { scrollToSection } from '@/utils/scrollToSection';
 
-
-interface MenuItems {
-    label: string,
-    href: string,
-    onClick?: () => void
-}
-
-
+import { scrollToSection } from '@/utils/scrollToSection'
 
 const menuItems = [
-  
-  
-  {
-    label: 'Estudios',
-    href: '#estudios',
-    onClick: () => scrollToSection('#estudios')
-  },
-  {
-    label: 'Habilidades',
-    href: '#habilidades',
-    onClick: () => scrollToSection('#habilidades')
-  },
-  {
-    label: 'Información Relevante',
-    href: '#info',
-    onClick: () => scrollToSection('#info')
-  },
+{
+label: 'Estudios',
+href: '#estudios',
+onClick: () => scrollToSection('#estudios')
+},
+{
+label: 'Habilidades',
+href: '#habilidades',
+onClick: () => scrollToSection('#habilidades')
+},
+{
+label: 'Información',
+href: '#info',
+onClick: () => scrollToSection('#info')
+},
 ]
-
-
-
 
 </script>
 
-
 <template>
 
-    <nav class="bg-white ">
+<nav
+class="fixed top-6 right-8 z-50 backdrop-blur-md bg-white/60 border border-white/40 shadow-md rounded-xl px-4 py-2"
+>
 
-        
+<NavigationMenu>
 
-        <NavigationMenu>
-                <NavigationMenuList class="flex justiy-end sm:flex-row">
-                   
+<NavigationMenuList class="flex gap-2">
 
-                    <!-- aqui añade todo lo de la lista de arriba -->
+<NavigationMenuItem
+v-for="item in menuItems"
+:key="item.label"
+>
 
-                    <NavigationMenuItem v-for="item in menuItems" :key="item.label">
-                                    <a
-                                    :href="item.href"
-                                    @click.prevent="item.onClick ? item.onClick() : null"
-                                    >
-                                        <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-[#6A5ACD] hover:text-white']">
-        
-                                         {{item.label}}
+<a
+:href="item.href"
+@click.prevent="item.onClick ? item.onClick() : null"
+>
 
-                                        </NavigationMenuLink>
-                                    </a>  
-                                    
-                        
-                    </NavigationMenuItem>
+<NavigationMenuLink
+:class="[navigationMenuTriggerStyle(),'hover:bg-[#6A5ACD] hover:text-white']"
+>
 
-                
+{{ item.label }}
 
+</NavigationMenuLink>
 
-                </NavigationMenuList>
-        </NavigationMenu>
-    </nav>
+</a>
 
-     
-   
+</NavigationMenuItem>
+
+</NavigationMenuList>
+
+</NavigationMenu>
+
+</nav>
+
 </template>
-
-
-
-<style scoped>
-    nav{
-          background-color: white;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1;
-    
-    }
-
-    .icon-home {
-        color: orange;
-        width: 3rem;
-        height: 100%;
-        /* cada rem son 16 pixeles */
-        /* si le pones 100% a uno de los dos, cambia de forma proporcional */
-    }
-
-    .icon-home:hover {
-        color: white;
-        background-color: orange;
-
-    }
-
-    .extra-nav {
-    background-color: white;
-    opacity: 0.7;
-    box-shadow: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    top: 0;
-    width: 11rem;
-    border-radius: 0 0 1rem 0;
-    z-index: 1;
-    /* esto es para que esté siempre encima :D */
-    }
-
-    @media (min-width: 640px){
-    .extra-nav {
-        width: 100%;
-        border-radius: 0 0 1rem 0;
-        opacity: 1;
-        left: 0;
-    }
-    }
-
-</style>
