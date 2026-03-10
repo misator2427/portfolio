@@ -19,21 +19,21 @@ onMounted(() => {
   const observer = new IntersectionObserver(
     (entries) => {
 
-      entries.forEach((entry) => {
+    entries.forEach((entry) => {
 
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible")
+        entry.target.classList.add("visible")
         } else {
-          entry.target.classList.remove("visible")
+        entry.target.classList.remove("visible")
         }
 
-      })
+    })
 
     },
     {
-      threshold: 0.75
+        threshold: 0.2
     }
-  )
+    )
 
   secciones.forEach((sec) => observer.observe(sec))
 
@@ -59,11 +59,7 @@ const photos = [
 
 // tarjetas mas limpio
 const cards = [
-    {
-    title: "Otros",
-    route: "/otros",
-    image: "/Imágenes/Benifallim/Benifallim.webp"
-    },
+    
     {
     title: "Trabajos",
     route: "/trabajos/about",
@@ -78,7 +74,12 @@ const cards = [
     title: "Contacto",
     route: "/contacto",
     image: "/Imágenes/Benifallim/Benifallim.webp"
-    }
+    },
+    {
+    title: "Otros",
+    route: "/otros",
+    image: "/Imágenes/Benifallim/Benifallim.webp"
+    },
 ]
 
 </script>
@@ -101,21 +102,21 @@ const cards = [
 
 <!-- parte inicial -->
 
-    <section class="seccion h-screen p-10 flex items-end" id="texto">
+    <section class="seccion h-screen px-6 sm:px-8 md:px-10 lg:px-14 flex items-end" id="texto">
 
-        <header class="w-full">
+        <header class="w-full max-w-[1200px]">
 
-            <h1 class="text-2xl md:text-7xl lg:text-8xl font-bold md:pb-15 z-10 transition-all font-[Rubik]">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold pb-1 md:pb-2 z-10 transition-all leading-tight texto-aparece">
 
                 <span>Miquel</span>
-                    <br>
+                <br>
                 <span>Satorre Santonja</span>
 
-                <p class="text-lg md:text-3xl transition-all mt-4">
-                    Esta es una web de presentación de Miquel Satorre Santonja.
-                </p>
-
             </h1>
+
+            <p class="text-base sm:text-lg md:text-2xl lg:text-3xl transition-all mt-1 md:mt-2 pb-2 max-w-[700px] texto-aparece-delay">
+                Conoce lo principal sobre mí a través de esta web
+            </p>
 
         </header>
 
@@ -127,12 +128,12 @@ const cards = [
 
         <header>
 
-            <div class="z-10 grid grid-cols-2 gap-16 items-center text-2xl">
+            <div class="z-10 grid grid-cols-2 gap-10 md:gap-28 lg:gap-40 xl:gap-32 items-center text-2xl transition-all">
 
                 <Card
                     v-for="card in cards"
                     :key="card.route"
-                    class="cursor-pointer transition-all hover:scale-105 w-[200px] bg-black/60 backdrop-blur-[4px] rounded-[10px] overflow-hidden hover:shadow-[0_10px_25px_rgba(0,0,0,0.6)]"
+                    class="cursor-pointer transition-all hover:scale-105 w-[200px] bg-[#FEEFF3] backdrop-blur-[4px] rounded-[10px] overflow-hidden text-[#3F5620]"
                     @click="router.push(card.route)"
                     >
 
@@ -140,7 +141,7 @@ const cards = [
 
         <!-- titulo de las tarjetas -->
 
-                        <div class="w-full text-center font-semibold text-[1.2rem] p-[8px] bg-white/10">
+                        <div class="w-full text-center font-semibold text-[1.2rem] p-[8px] bg-[#FEEFF3] text-[#3F5620]">
                          {{ card.title }}
                         </div>
 
@@ -183,6 +184,31 @@ const cards = [
     .seccion.visible{
     opacity:1;
     transform:translateY(0);
+    }
+
+     /* para que "aparezca" */
+
+    @keyframes aparecer{
+
+        from{
+            opacity:0;
+            transform: translateY(20px);
+        }
+
+        to{
+            opacity:1;
+            transform: translateY(0);
+        }
+
+    }
+
+    .texto-aparece{
+        animation: aparecer 0.6s ease;
+    }
+
+    .texto-aparece-delay{
+        animation: aparecer 0.6s ease 0.2s;
+        animation-fill-mode: both;
     }
 
     

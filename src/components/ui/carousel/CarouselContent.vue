@@ -17,12 +17,12 @@ const { carouselRef, orientation } = useCarousel()
   <div
     ref="carouselRef"
     data-slot="carousel-content"
-    class="overflow-hidden w-screen h-screen"
+    class="overflow-hidden w-full"
   >
     <div
       :class="
         cn(
-          'flex w-screen h-screen',
+          'flex w-full',
           orientation === 'horizontal' ? '' : 'flex-col',
           props.class,
         )"

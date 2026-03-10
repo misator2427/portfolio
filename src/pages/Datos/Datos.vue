@@ -8,7 +8,8 @@ import { ref, onMounted } from "vue"
 const skills = [
     {
     title: "Desarrollo Web",
-    description: "Experiencia desarrollando aplicaciones web modernas utilizando Vue, Tailwind y TypeScript."
+    description: "Experiencia desarrollando aplicaciones web modernas utilizando Vue, Tailwind y TypeScript.",
+    class: "text-[#3F5620]",
     },
     {
     title: "Programación",
@@ -52,7 +53,7 @@ onMounted(() => {
 
     },
     {
-        threshold: 0.75
+        threshold: 0.2
     }
     )
 
@@ -69,26 +70,44 @@ onMounted(() => {
    
     <NavegadorDatos />
 
-    <div class="fixed inset-0 -z-10 bg-red-300 flex items-center"></div>
+    <div class="fixed inset-0 -z-10 bg-[#FEEFF3] flex items-center"></div>
 
 <!-- secciond de estudios  -->
 
-    <section class="seccion min-h-screen flex flex-col justify-center px-10 max-w-[1400px] mx-auto" id="estudios">
+    <section class="seccion min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-10 lg:px-14 max-w-[1400px] mx-auto" id="estudios">
 
-        <RouterLink to="/" class="absolute top-6 left-10 text-lg font-semibold hover:underline">
-            Home
-        </RouterLink>
+        <header class="flex px-10 text-[#3F5620]">
 
-        <div class="max-w-[900px]">
+            <RouterLink to="/" class="absolute top-6 left-10 text-lg font-semibold hover:underline">
+                Home
+            </RouterLink>
+        </header>
 
-            <h1 class="text-4xl md:text-7xl lg:text-8xl font-bold">
+       
 
-                <span>Miquel</span>
+        <div class="max-w-[900px] pt-20">
+
+            <h1 class="text-4xl md:text-6xl font-bold mb-8 ">
+
+                <span class="text-[#3F5620] texto-aparece">
+                    Sobre mis estudios
+                </span>
+                
+
+                <p class="text-lg md:text-2xl mt-6 texto-aparece-delay">
+                    Como ya sabes mi nombre, nos ahorramos las presentaciones, más allá de decirte que estoy encantado de tenerte por aquí
+
                     <br>
-                <span>Satorre Santonja</span>
 
-                <p class="text-lg md:text-2xl mt-6">
-                    Esta es una web de presentación de Miquel Satorre Santonja.
+                    Soy un diseñador estudiando el grado de Diseño y Tecnologñias Creativas por la UPV, que es una pasada. En realidad no empecé con esto, pero al final el diseño acabó llamándome y ahora estás leyendo esto.
+
+                    <br>
+
+                    Así que sí, podría decir que el Diseño es lo que realmente me motiva, es lo que me hace querer aprender más y más y no estar conforme con mis resultados, si el objetivo es aprender,
+
+                    <br>
+
+                    ¡Equivocarse es parte de la gracia!
                 </p>
 
             </h1>
@@ -99,25 +118,39 @@ onMounted(() => {
 
 <!-- seccion de habilidades  -->
 
-    <section class="seccion min-h-screen flex flex-col justify-center px-10 max-w-[1400px] mx-auto pt-20" id="habilidades">
-        <div class="w-full max-w-[900px]">
+    <section class="seccion min-h-screen flex items-center px-6 sm:px-8 md:px-10 lg:px-14 max-w-[1400px] mx-auto" id="habilidades">
+        <div class="w-full max-w-[900px] mx-auto">
 
-            <h1 class="text-4xl md:text-6xl font-bold mb-8">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#3F5620] leading-tight texto-aparece">
                 Habilidades
             </h1>
 
-            <br>
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl mt-3 md:mt-4 leading-snug text-[#3F5620] texto-aparece">
+                Aquí me gustaría destacar alguna de las cosas que considero que me distingue a mí de otro posible perfil de diseño
+            </p>
 
-            <CarouselSkills :skills="skills" />
+            <div class="w-full mt-8 md:mt-10 flex justify-center texto-aparece-delay">
+                <CarouselSkills :skills="skills" />
+            </div>
 
         </div>
     </section>
 
 <!-- seccion de info -->
 
-    <section class="seccion min-h-screen flex items-center px-10" id="info">
+    <section class="seccion min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-10 lg:px-14 max-w-[1400px] mx-auto" id="info">
 
-        <div class="w-full max-w-[1100px] mx-auto flex flex-col gap-8">
+        <h1 class="text-4xl md:text-6xl font-bold mb-8 text-[#3F5620] texto-aparece">
+
+            <span class="text-[#3F5620]">
+                Más sobre mí
+            </span>
+
+        </h1>
+
+        
+
+        <div class="w-full max-w-[1100px] mx-auto flex flex-col gap-8 texto-aparece-delay">
 
             <Card class="w-full border shadow-sm hover:shadow-md transition-all duration-300">
 
@@ -125,8 +158,8 @@ onMounted(() => {
 
                     <div class="flex items-center gap-6">
 
-                        <h2 class="text-2xl font-bold">
-                            Sección
+                        <h2 class="text-2xl font-bold text-[#3F5620]">
+                            Actuar
                         </h2>
 
                         <p class="text-gray-600">
@@ -153,7 +186,7 @@ onMounted(() => {
 
                     <div class="flex items-center gap-6">
 
-                        <h2 class="text-2xl font-bold">
+                        <h2 class="text-2xl font-bold text-[#3F5620]">
                             Lo que sea
                         </h2>
 
@@ -182,7 +215,7 @@ onMounted(() => {
 
                     <div class="flex items-center gap-6">
 
-                        <h2 class="text-2xl font-bold">
+                        <h2 class="text-2xl font-bold text-[#3F5620]">
                             Lo que sea
                         </h2>
 
@@ -241,5 +274,31 @@ onMounted(() => {
     opacity:1;
     transform:translateY(0);
     }
+
+    /* para que "aparezca" */
+
+    @keyframes aparecer{
+
+        from{
+            opacity:0;
+            transform: translateY(20px);
+        }
+
+        to{
+            opacity:1;
+            transform: translateY(0);
+        }
+
+    }
+
+    .texto-aparece{
+        animation: aparecer 0.6s ease;
+    }
+
+    .texto-aparece-delay{
+        animation: aparecer 0.6s ease 0.2s;
+        animation-fill-mode: both;
+    }
+
 
 </style>

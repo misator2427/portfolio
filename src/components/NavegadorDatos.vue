@@ -33,7 +33,7 @@ onClick: () => scrollToSection('#info')
 <template>
 
 <nav
-class="fixed top-6 right-8 z-50 backdrop-blur-md bg-white/60 border border-white/40 shadow-md rounded-xl px-4 py-2"
+class="fixed top-6 right-8 z-50 backdrop-blur-md bg-white/60 border border-white/40 shadow-md rounded-xl px-4 py-2 text-[#3F5620]"
 >
 
 <NavigationMenu>
@@ -51,7 +51,7 @@ v-for="item in menuItems"
 >
 
 <NavigationMenuLink
-:class="[navigationMenuTriggerStyle(),'hover:bg-[#6A5ACD] hover:text-white']"
+:class="[navigationMenuTriggerStyle(),'hover:bg-[#3F5620] hover:text-white bg-[#FEEFF3]']"
 >
 
 {{ item.label }}

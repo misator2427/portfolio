@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import type { DateValue } from 'reka-ui';
@@ -18,222 +17,197 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 
-import { Phone, Mail, MapPin, X, Instagram, Linkedin, InstagramIcon, MessageCircle, Menu, MenuIcon } from 'lucide-vue-next';
-
+import { Phone, Mail, MapPin, X, Instagram, Linkedin, MessageCircle } from 'lucide-vue-next';
 
 onMounted(() => {
+  const secciones = document.querySelectorAll(".seccion")
 
-    const secciones = document.querySelectorAll(".seccion")
-
-    const observer = new IntersectionObserver(
+  const observer = new IntersectionObserver(
     (entries) => {
-
-    entries.forEach((entry) => {
-
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-        entry.target.classList.add("visible")
+          entry.target.classList.add("visible")
         } else {
-        entry.target.classList.remove("visible")
+          entry.target.classList.remove("visible")
         }
-
-    })
-
+      })
     },
     {
-        threshold: 0.75
+      threshold: 0.2
     }
-    )
+  )
 
-    secciones.forEach((sec) => observer.observe(sec))
-
+  secciones.forEach((sec) => observer.observe(sec))
 })
 
-
-const dias = ref<DateValue> ()
-
+const dias = ref<DateValue>()
 </script>
 
 <template>
+  <div class="fixed inset-0 -z-10 bg-[#FEEFF3]"></div>
 
+  <section id="Lugar" class="seccion min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-10 lg:px-14 max-w-[1400px] mx-auto">
 
-<section id="Lugar" class="seccion w-full py-12 bg-gray-100 h-screen">
+    <header class="flex px-10 text-[#3F5620]">
+      <RouterLink to="/" class="absolute top-6 left-10 text-lg font-semibold hover:underline">
+        Home
+      </RouterLink>
+    </header>
 
-  <RouterLink to="/" class="absolute top-6 left-10 text-lg font-semibold hover:underline">
-    Home
-  </RouterLink>
+    <div class="w-full pt-20 flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
 
-  <div class="container mx-auto max-w-5xl px-4">
+      <!-- Texto -->
+      <div class="w-full lg:w-1/2 max-w-[900px] text-[#3F5620]">
+        <h1 class="text-4xl md:text-6xl font-bold mb-8">
+          <span class="texto-aparece">¿Dónde?</span>
 
-   
-          
-    <div class="flex lg:flex-row gap-8 ">
+          <p class="text-lg md:text-2xl mt-6 texto-aparece-delay">
+            X es una de mis inspiraciones. Es donde vivo y paso la mayor parte de mi tiempo, donde he podido desarrollar y descartar más ideas y probar cosas.
+            <br><br>
+            Es donde empezó todo, por eso sigo teniendo ilusión de volver a X cada vez, porque me recuerda lo mucho que ha pasado y cambiado en todo este tiempo.
+          </p>
+        </h1>
+      </div>
 
-      <h1 class="text-1xl md:text-7xl lg:text-8xl font-bold md:pb-15 z-10 transition-all texto-aparece">
-        <span>Miquel</span>
-        <br>
-        <!-- br es un salto de línea -->
-        <span>Satorre Santonja</span>
-
-        <p class="text-lg md:text-3xl transition-all mt-4">
-            Esta es una web de presentación de Miquel Satorre Santonja.
-        </p>
-      </h1>
-
-      <!-- Mapa de Google Maps -->
-      <div class="hidden lg:block w-full lg:w-1/2 rounded-lg overflow-hidden shadow-lg texto-aparece-delay">
-        <div class="aspect-square">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24910.002153592683!2d-0.4990140953267379!3d38.70058034303596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1772616610408!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <!-- Mapa -->
+      <div class="w-full lg:w-1/2 texto-aparece-delay">
+        <div class="w-full overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24910.002153592683!2d-0.4990140953267379!3d38.70058034303596!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1772616610408!5m2!1ses!2ses"
+            class="w-full h-full border-0"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
 
-      
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="Contacto" class="seccion w-full py-12 bg-gray-100 min-h-screen flex items-center">
-  <div class="container mx-auto max-w-5xl px-4 flex flex-col lg:flex-row items-start gap-12">
+  <section id="Contacto" class="seccion min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-10 lg:px-14 max-w-[1400px] mx-auto">
 
-    <h1 class="order-1 lg:order-2 w-full lg:w-1/2 text-right lg:text-left text-3xl md:text-7xl lg:text-8xl font-bold transition-all texto-aparece">
-        <span>Miquel</span>
-        <br>
-        <!-- br es un salto de línea -->
-        <span>Satorre Santonja</span>
+    <div class="w-full pt-20 flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
 
-        <p class="text-lg md:text-3xl transition-all mt-4">
-            Esta es una web de presentación de Miquel Satorre Santonja.
-        </p>
-    </h1>
+      <!-- Texto -->
+      <div class="w-full lg:w-1/2 max-w-[900px] text-[#3F5620]">
+        <h1 class="text-4xl md:text-6xl font-bold mb-8">
+          <span class="texto-aparece">¡Contáctame!</span>
 
-
-<!-- Formulario -->
-    <div class="order-2 lg:order-1 w-full lg:w-1/2 texto-aparece-delay">
-      <form  class="space-y-6 bg-white p-8 rounded-2xl shadow-xl w-full">
-        <div class="space-y-2">
-              <Label for="nomen">Nombre</Label>
-              <Input id="nomen" required /> 
-              
-
-        </div>
-              
-        <div class="space-y-2">
-              <Label for="cognomen">Apellidos</Label>
-              <Input id="cognomen" required /> 
-
-        </div>
-
-        <div class="space-y-2">
-          <Select required>
-            <SelectTrigger class="border-gray-200 bg-white text-gray-900">
-              <SelectValue placeholder="Selecciona una misión" />
-            </SelectTrigger>
-
-
-            <SelectContent class="bg-white">
-              <SelectItem value="rescatare">
-                Rescate de rehenes
-              </SelectItem>
-              <SelectItem value="investigare">
-                Investigacion criminal
-              </SelectItem>
-              <SelectItem value="persequi">
-                Persecucion de villanos
-              </SelectItem>
-              <SelectItem value="defendere">
-                Defensa de Gotham
-              </SelectItem>
-              
-            </SelectContent>
-          </Select>
-
-        </div>
-
-        <div class="space-y-2">
-          <Label>Fecha de la mision</Label>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline">
-                <span v-if="dias"> 
-                  {{dias.day}} / {{ dias.month }} / {{ dias.year }}
-                </span>
-
-                <span v-else> 
-                  Selecciona una fecha 
-                </span>
-
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent>  
-              <Calendar v-model="dias"/>
-            </PopoverContent>
-          </Popover>
-
-        </div>
-
-        <Button
-        type="submit"
-        class="w-full bg-[rgb(106,90,205)] hover:bg-[rgb(88,75,171)] text-white text-md mt-4"
-        >
-          Enviar solicitud
-        </Button>
-
-            
-      </form>
-    </div>
-
-  </div>
-</section>
-
-
-
-<footer class="w-full bg-gray-900 text-gray-300 py-12">
-  <div class="flex flex-col md:flex-row md:justify-around gap-8 max-w-3xl mx-auto">
-
-    <div class="space-y-4 text-center md:text-left">
-
-      <h3 class="text-xl font-bold text-white">Información de Contacto</h3>
-            
-        <div class="space-y-2">
-          <p class="flex items-center gap-2 justify-center md:justify-start">
-
-            <Phone class="w-5 h-5 "/>
-            + 735 918 385 
-
+          <p class="text-lg md:text-2xl mt-6 texto-aparece-delay">
+            Puedes contactarme mediante este formulario, sé que es un poco corporativo, pero es una buena forma de establecer un contacto orientado a encargo.
+            <br><br>
+            Ya sabes, si estás pensando en realizar un encargo, contáctame y que empiece la magia.
           </p>
+        </h1>
+      </div>
+
+      <!-- Formulario -->
+      <div class="w-full lg:w-1/2 texto-aparece-delay">
+        <form class="space-y-6 bg-white p-8 rounded-2xl shadow-xl w-full">
+          <div class="space-y-2">
+            <Label for="nomen">Nombre</Label>
+            <Input id="nomen" required />
+          </div>
+
+          <div class="space-y-2">
+            <Label for="cognomen">Apellidos</Label>
+            <Input id="cognomen" required />
+          </div>
+
+          <div class="space-y-2">
+            <Select required>
+              <SelectTrigger class="border-gray-200 bg-white text-[#3F5620]">
+                <SelectValue placeholder="Selecciona una opción" />
+              </SelectTrigger>
+
+              <SelectContent class="bg-white">
+                <SelectItem value="rescatare">
+                  Rebranding
+                </SelectItem>
+                <SelectItem value="investigare">
+                  Campaña
+                </SelectItem>
+                <SelectItem value="persequi">
+                  Animación
+                </SelectItem>
+                <SelectItem value="defendere">
+                  Marketing
+                </SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div class="space-y-2">
+            <Label>Fecha del meeting</Label>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="outline">
+                  <span v-if="dias">
+                    {{ dias.day }} / {{ dias.month }} / {{ dias.year }}
+                  </span>
+
+                  <span v-else>
+                    Selecciona una fecha
+                  </span>
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent>
+                <Calendar v-model="dias" />
+              </PopoverContent>
+            </Popover>
+          </div>
+
+          <Button
+            type="submit"
+            class="w-full bg-[#3F5620] hover:bg-[rgb(88,75,171)] text-white text-md mt-4"
+          >
+            Enviar solicitud
+          </Button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="w-full bg-[#3F5620] text-gray-300 py-12">
+    <div class="flex flex-col md:flex-row md:justify-around gap-8 max-w-3xl mx-auto">
+
+      <div class="space-y-4 text-center md:text-left">
+        <h3 class="text-xl font-bold text-white">Información de Contacto</h3>
+
+        <div class="space-y-2">
           <p class="flex items-center gap-2 justify-center md:justify-start">
-            <Mail class="w-5 h-5 "/>
+            <Phone class="w-5 h-5" />
+            + 735 918 385
+          </p>
+
+          <p class="flex items-center gap-2 justify-center md:justify-start">
+            <Mail class="w-5 h-5" />
             msatsan@gmail.com
-
           </p>
-          <p class="flex items-center gap-2 justify-center md:justify-start">
-            <MapPin class="w-5 h-5 "/>
-            Alcoy, Alicante
 
+          <p class="flex items-center gap-2 justify-center md:justify-start">
+            <MapPin class="w-5 h-5" />
+            Alcoy, Alicante
           </p>
         </div>
       </div>
 
-      <!-- Redes sociales -->
       <div class="space-y-4 text-center md:text-left text-gray-400">
-        <h3 class="text-xl font-bold text-white">Síguenos</h3>
+        <h3 class="text-xl font-bold text-white">Puedes seguirme por aquí</h3>
         <div class="flex gap-8 justify-center">
-          
-          <X class="w-10 h-10 hover:text-white"/>
-          <Instagram class="w-10 h-10 hover:text-white"/>
-          <Linkedin class="w-10 h-10 hover:text-white"/>
-          <MessageCircle class="w-10 h-10 hover:text-white"/>
-              
+          <X class="w-10 h-10 hover:text-white" />
+          <Instagram class="w-10 h-10 hover:text-white" />
+          <Linkedin class="w-10 h-10 hover:text-white" />
+          <MessageCircle class="w-10 h-10 hover:text-white" />
         </div>
+      </div>
     </div>
-  </div>
-</footer>
-
+  </footer>
 </template>
 
-
-
 <style scoped>
-
 .seccion{
   opacity:0;
   transform:translateY(40px);
@@ -245,5 +219,24 @@ const dias = ref<DateValue> ()
   transform:translateY(0);
 }
 
+@keyframes aparecer{
+  from{
+    opacity:0;
+    transform: translateY(20px);
+  }
 
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+
+.texto-aparece{
+  animation: aparecer 0.6s ease;
+}
+
+.texto-aparece-delay{
+  animation: aparecer 0.6s ease 0.2s;
+  animation-fill-mode: both;
+}
 </style>

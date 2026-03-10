@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Card, CardContent } from '@/components/ui/card'
 import {
   Carousel,
   CarouselContent,
@@ -20,7 +21,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   loop: true,
-  dragFree: true
+  dragFree: false
 })
 
 const api = ref()
@@ -37,31 +38,32 @@ function nextSkill() {
 
 <template>
   <Carousel
-    class="w-full overflow-hidden"
+    class="w-full max-w-[800px] mx-auto"
     :opts="{
       loop: props.loop,
       dragFree: props.dragFree
     }"
     @init-api="setApi"
   >
-    <CarouselContent class="w-full">
+    <CarouselContent>
       <CarouselItem
         v-for="(skill, index) in props.skills"
         :key="index"
-        class="basis-full min-w-0"
       >
-        <div
-          class="w-full border border-black/20 px-6 py-6 md:px-8 md:py-8 cursor-pointer bg-white/30"
+        <Card
+          class="w-full border border-black/20 bg-white/40 rounded-2xl overflow-hidden cursor-pointer"
           @click="nextSkill"
         >
-          <h3 class="text-2xl font-bold mb-4">
-            {{ skill.title }}
-          </h3>
+          <CardContent class="px-6 py-8 md:px-8 md:py-10">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4 text-[#3F5620]">
+              {{ skill.title }}
+            </h3>
 
-          <p class="text-base md:text-lg text-gray-700 leading-relaxed">
-            {{ skill.description }}
-          </p>
-        </div>
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+              {{ skill.description }}
+            </p>
+          </CardContent>
+        </Card>
       </CarouselItem>
     </CarouselContent>
   </Carousel>

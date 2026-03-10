@@ -33,18 +33,24 @@ const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
 
 <template>
 
+    <div class="fixed inset-0 -z-10 bg-[#FEEFF3] flex items-center"></div>
+
+    <div class="w-full max-w-[900px] px-6 sm:px-8 md:px-10 pt-8">
+
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 texto-aparece text-[#3F5620]">
+            Galería de Trabajos
+        </h1>
+
+        <p class="text-lg md:text-2xl texto-aparece-delay">
+            Selecciona un trabajo para verlo en detalle
+        </p>
+
+    </div>
+
 
     <div class="flex flex-col items-center justify-center gap-8 w-full max-w-350 my-8 mx-auto">
 
-        <div class="text-center">
-            <h1 class="font-bold text-xl lg:text-5xl mb-5 texto-aparece">
-                GALERÍA DE TRABAJOS
-            </h1>
-
-            <p class="mb-4 texto-aparece-delay">
-                Selecciona un trabajo para verlo en detalle
-            </p>
-        </div>
+        
 
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
 
@@ -77,7 +83,7 @@ const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
                 :class="['px-4 py-2 rounded-md font-medium transition-colors',
                     nuncPagina === 1
                     ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                    : 'bg-[#6ecd51] hover:bg-[#5fe2f0] hover:text-white'
+                    : 'bg-[#3F5620] hover:bg-[#EED4DB] hover:text-black'
 
                 ]"
             >
@@ -90,8 +96,8 @@ const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
                 @click="ireAdPaginam(pagina)"
                 :class="['w-10 h-10 rounded-md font-medium transition-colors ', 
                     nuncPagina === pagina
-                     ? 'bg-[#5fe2f0] text-white'
-                        :'bg-[#6ecd51]  hover:hover:bg-[#5fe2f0] hover:text-white'
+                     ? 'bg-[#CEADB5] text-black'
+                        :'bg-[#3F5620]  hover:bg-[#EED4DB] hover:text-black'
                 ]"
             >
                 {{ pagina }}
@@ -103,7 +109,7 @@ const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
                 :class="['px-4 py-2 rounded-md font-medium transition-colors',
                     nuncPagina === totalPaginae
                     ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                    : 'bg-[#6ecd51] hover:bg-[#5fe2f0] hover:text-white'
+                    : 'bg-[#3F5620] hover:bg-[#FEEFF3] hover:text-black text-[#FEEFF3]'
 
                 ]"
             >

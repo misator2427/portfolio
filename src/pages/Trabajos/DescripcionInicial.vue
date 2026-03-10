@@ -8,23 +8,25 @@
 
 
 <template>
-    <div class="flex flex-col lg:flex-row lg:justify-between md:items-center w-full max-w-350 md:mx-auto my-8 gap-8 px-5 md:px-20">
 
-      
-       <!-- he quitado lo de la figura que cambiaba con el raton -->
+    <div class="fixed inset-0 -z-10 bg-[#FEEFF3]"></div>
 
+    <section class="min-h-screen flex items-center justify-center px-6 sm:px-8 md:px-10 lg:px-14 max-w-[1400px] mx-auto">
 
-        <div class="flex flex-col gap-4 order-1 text-center lg:text-left">
+        <div class="w-full max-w-[900px] text-center flex flex-col items-center">
 
-            <h1 class="font-bold text-xl lg:text-5xl mb-5 texto-aparece"> 
-               Sobre los trabajos
+            
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#3F5620] leading-tight texto-aparece">
+                Sobre los trabajos
             </h1>
-            <!-- texto como tal -->
-            <div class="lg:max-w-3xl texto-aparece-delay">
+
+           
+            <div class="mt-6 md:mt-8 text-base sm:text-lg md:text-xl lg:text-2xl texto-aparece-delay">
+
                 <p class="mb-5">
                     Hola
                 </p>
-                        
+
                 <p class="mb-5">
                     Caracola
                 </p>
@@ -33,12 +35,12 @@
                     Yi
                 </p>
 
-                
-                
             </div>
+
         </div>
 
-    </div>
+    </section>
+
 </template>
 
 
