@@ -173,6 +173,14 @@ onMounted(() => {
                         Realmente es más un hobbie, me gusta estar y experimentar posiciones que normalmente no podría.
                         De hecho he tenido la suerte de poder participar en algunos cortos de mi ciudad.
                         Dejo un enlace por aquí por si tienes curiosidad anque son de hace tiempo:
+
+                        <a 
+                        href="https://youtu.be/QdlomEWjRMw?si=qs0xKMANgddIGEyy" 
+                        target="_blank" 
+                        class="text-blue-600 underline hover:text-blue-800"
+                        >
+                            Ver vídeo en YouTube
+                        </a>
                     </div>
                 </transition>
 
