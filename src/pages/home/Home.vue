@@ -40,21 +40,11 @@ onMounted(() => {
 })
 
 const photos = [
-    "justice",
-    "arkham",
-    "superman",
-    "varios",
-    "villana",
-    "villano",
-    "grupo",
-    "robin",
-    "anne",
-    "joker",
-    "resplandor",
-    "cat",
-    "gafas",
-    "league",
-    "fondoVerde"
+    "Benifallim",
+    "Letra",
+    "Pereza",
+    "Post1",
+    "Calcotada",
 ]
 
 // tarjetas mas limpio
@@ -63,22 +53,22 @@ const cards = [
     {
     title: "Trabajos",
     route: "/trabajos/about",
-    image: "/Imágenes/Benifallim/Benifallim.webp"
+    image: "/imagenesOptimizadas/FolletoA.jpg"
     },
     {
     title: "Datos",
     route: "/datos",
-    image: "/Imágenes/Benifallim/Benifallim.webp"
+    image: "/imagenesOptimizadas/Calcotada.jpg"
     },
     {
     title: "Contacto",
     route: "/contacto",
-    image: "/Imágenes/Benifallim/Benifallim.webp"
+    image: "/imagenesOptimizadas/Benifallim.jpg"
     },
     {
     title: "Otros",
     route: "/otros",
-    image: "/Imágenes/Benifallim/Benifallim.webp"
+    image: "/imagenesOptimizadas/Letra.jpg"
     },
 ]
 
@@ -92,7 +82,7 @@ const cards = [
     <div class="fixed inset-0 -z-10">
         <CarrusImaginum 
         :photos="photos"
-        basePath="/imagines/batman"
+        basePath="/imagenesOptimizadas"
         :auto-play-delay="2000"
         class="carousel-bg"
         />
@@ -106,7 +96,7 @@ const cards = [
 
         <header class="w-full max-w-[1200px]">
 
-            <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold pb-1 md:pb-2 z-10 transition-all leading-tight texto-aparece">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold pb-1 md:pb-2 z-10 transition-all leading-tight texto-aparece text-[#3F5620]">
 
                 <span>Miquel</span>
                 <br>
@@ -114,8 +104,8 @@ const cards = [
 
             </h1>
 
-            <p class="text-base sm:text-lg md:text-2xl lg:text-3xl transition-all mt-1 md:mt-2 pb-2 max-w-[700px] texto-aparece-delay">
-                Conoce lo principal sobre mí a través de esta web
+            <p class="text-base sm:text-lg md:text-2xl lg:text-3xl transition-all mt-1 md:mt-2 pb-2 max-w-[700px] texto-aparece-delay ">
+                Importancia en el diseño y la familia
             </p>
 
         </header>
@@ -135,26 +125,20 @@ const cards = [
                     :key="card.route"
                     class="cursor-pointer transition-all hover:scale-105 w-[200px] bg-[#FEEFF3] backdrop-blur-[4px] rounded-[10px] overflow-hidden text-[#3F5620]"
                     @click="router.push(card.route)"
-                    >
+                >
 
                     <CardContent class="p-0 flex flex-col items-center">
 
-        <!-- titulo de las tarjetas -->
-
                         <div class="w-full text-center font-semibold text-[1.2rem] p-[8px] bg-[#FEEFF3] text-[#3F5620]">
-                         {{ card.title }}
+                            {{ card.title }}
                         </div>
 
-    <!-- la imagen adaptada -->
-
-                        <div class="w-full p-[10px] flex justify-center items-center">
-
+                        <div class="w-full h-[160px] overflow-hidden">
                             <img 
-                            :src="card.image"
-                            :alt="card.title"
-                            class="max-w-full h-auto object-contain"
+                                :src="card.image"
+                                :alt="card.title"
+                                class="w-full h-full object-cover"
                             />
-
                         </div>
 
                     </CardContent>

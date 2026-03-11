@@ -7,21 +7,21 @@ import { ref, onMounted } from "vue"
 
 const skills = [
     {
-    title: "Desarrollo Web",
-    description: "Experiencia desarrollando aplicaciones web modernas utilizando Vue, Tailwind y TypeScript.",
-    class: "text-[#3F5620]",
-    },
-    {
-    title: "Programación",
-    description: "Capacidad para diseñar soluciones eficientes y estructuradas aplicando buenas prácticas de programación."
-    },
-    {
-    title: "Aprendizaje rápido",
-    description: "Capacidad para adaptarme a nuevas tecnologías y herramientas de forma rápida."
-    },
-    {
     title: "Trabajo en equipo",
-    description: "Experiencia colaborando en proyectos y comunicando ideas técnicas de forma clara."
+    description: "Experiencia de trabajo en equipo, capacidad de adaptación a diferentes compañeros y encargos",
+
+    },
+    {
+    title: "Diseño",
+    description: "Manejo de programas como Illustrator, Photoshop, Indesign o Premiere."
+    },
+    {
+    title: "Tolerancia a la presión",
+    description: "Capacidad de trabajar bajo presión de cortos plazos de entrega, situaciones límite."
+    },
+    {
+    title: "Encargos reales",
+    description: "Experiencia previa trabajando en equipos con encargos reales para agentes exxternos a la universidad."
     }
 ]
 
@@ -87,27 +87,23 @@ onMounted(() => {
 
         <div class="max-w-[900px] pt-20">
 
-            <h1 class="text-4xl md:text-6xl font-bold mb-8 ">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight texto-aparece">
 
                 <span class="text-[#3F5620] texto-aparece">
                     Sobre mis estudios
                 </span>
                 
 
-                <p class="text-lg md:text-2xl mt-6 texto-aparece-delay">
-                    Como ya sabes mi nombre, nos ahorramos las presentaciones, más allá de decirte que estoy encantado de tenerte por aquí
-
-                    <br>
+                <p class="text-base sm:text-lg md:text-xl lg:text-2xl mt-3 md:mt-4 leading-snug texto-aparece">
+                    Como ya sabes mi nombre, nos ahorramos las presentaciones, más allá de decirte que estoy encantado de tenerte por aquí.
 
                     Soy un diseñador estudiando el grado de Diseño y Tecnologñias Creativas por la UPV, que es una pasada. En realidad no empecé con esto, pero al final el diseño acabó llamándome y ahora estás leyendo esto.
 
-                    <br>
-
                     Así que sí, podría decir que el Diseño es lo que realmente me motiva, es lo que me hace querer aprender más y más y no estar conforme con mis resultados, si el objetivo es aprender,
-
-                    <br>
+                    
 
                     ¡Equivocarse es parte de la gracia!
+                    
                 </p>
 
             </h1>
@@ -125,7 +121,7 @@ onMounted(() => {
                 Habilidades
             </h1>
 
-            <p class="text-base sm:text-lg md:text-xl lg:text-2xl mt-3 md:mt-4 leading-snug text-[#3F5620] texto-aparece">
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl mt-3 md:mt-4 leading-snug texto-aparece">
                 Aquí me gustaría destacar alguna de las cosas que considero que me distingue a mí de otro posible perfil de diseño
             </p>
 
@@ -140,7 +136,7 @@ onMounted(() => {
 
     <section class="seccion min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-10 lg:px-14 max-w-[1400px] mx-auto" id="info">
 
-        <h1 class="text-4xl md:text-6xl font-bold mb-8 text-[#3F5620] texto-aparece">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#3F5620] leading-tight texto-aparece">
 
             <span class="text-[#3F5620]">
                 Más sobre mí
@@ -163,7 +159,7 @@ onMounted(() => {
                         </h2>
 
                         <p class="text-gray-600">
-                            Descripción
+                            Me encanta
                         </p>
 
                     </div>
@@ -174,7 +170,38 @@ onMounted(() => {
 
                 <transition name="expand">
                     <div v-if="openCard === 1" class="px-6 pb-6 text-lg text-gray-700">
-                        Descripción detallada de la sección
+                        Realmente es más un hobbie, me gusta estar y experimentar posiciones que normalmente no podría.
+                        De hecho he tenido la suerte de poder participar en algunos cortos de mi ciudad.
+                        Dejo un enlace por aquí por si tienes curiosidad anque son de hace tiempo:
+                    </div>
+                </transition>
+
+            </Card>
+            <Card class="w-full border shadow-sm hover:shadow-md transition-all duration-300">
+
+                <div class="flex justify-between items-center p-6 cursor-pointer" @click="toggleCard(1)">
+
+                    <div class="flex items-center gap-6">
+
+                        <h2 class="text-2xl font-bold text-[#3F5620]">
+                            Monitor
+                        </h2>
+
+                        <p class="text-gray-600">
+                            De tiempo libre
+                        </p>
+
+                    </div>
+
+                    <span class="text-2xl transition-transform duration-300" :class="{ 'rotate-180': openCard === 1 }"></span>
+
+                </div>
+
+                <transition name="expand">
+                    <div v-if="openCard === 1" class="px-6 pb-6 text-lg text-gray-700">
+                        En mi ciudad soy monitor de un grupo juvenil, los Juniors Flor de Neu.
+                        Realizamos actividades con niños de todas las edades.
+                        Poder hacer que desconecten y quw pasen un buen rato me hace muy feliz
                     </div>
                 </transition>
 
@@ -187,11 +214,11 @@ onMounted(() => {
                     <div class="flex items-center gap-6">
 
                         <h2 class="text-2xl font-bold text-[#3F5620]">
-                            Lo que sea
+                            Deporte
                         </h2>
 
                         <p class="text-gray-600">
-                         Descripción
+                         El que me haga moverme
                         </p>
 
                     </div>
@@ -203,7 +230,8 @@ onMounted(() => {
                 <transition name="expand">
                     <div
                         v-if="openCard === 2" class="px-6 pb-6 text-lg text-gray-700">
-                        Descripción mucho detalle
+                        Me encanta el deporte, especialmente si es algo movidito. Es lo que me ayuda a despejarme.
+                        Siempre estoy abierto a una escapada con amigos o plan que involucre el aire libre.
                     </div>
                 </transition>
 
@@ -216,11 +244,11 @@ onMounted(() => {
                     <div class="flex items-center gap-6">
 
                         <h2 class="text-2xl font-bold text-[#3F5620]">
-                            Lo que sea
+                            Familiar
                         </h2>
 
                         <p class="text-gray-600">
-                            Descripción
+                            Mi apoyo
                         </p>
 
                     </div>
@@ -231,7 +259,9 @@ onMounted(() => {
 
                 <transition name="expand">
                     <div v-if="openCard === 3" class="px-6 pb-6 text-lg text-gray-700">
-                        Descripción detallada
+                        La familia y de donde vengo es uno de mis pilares fundamentales. 
+                        Me ayuda a recordar lo que he recorrido y relativizan lo que estoy haciendo.
+                        En resumen, le dan sentido a las cosas que hago.
                     </div>
                 </transition>
 

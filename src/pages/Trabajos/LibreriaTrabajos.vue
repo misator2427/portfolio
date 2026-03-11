@@ -6,7 +6,7 @@ import { computed, ref } from 'vue';
 // paginador que controla y salen los personajes para clicar
 //de aqui para abajo es para hacer nuestro paginador
 
-const inPagina = 6
+const inPagina = 3
 
 const nuncPagina = ref (1)
 
@@ -62,7 +62,7 @@ const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
             >
 
                 <img 
-                    :src="`/imagines/simpsons/${ character.imago }`"
+                    :src="`/imagenesOptimizadas/${ character.imago }`"
                     class="gallery-image"
                 />
 

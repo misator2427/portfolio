@@ -24,15 +24,15 @@
             <div class="mt-6 md:mt-8 text-base sm:text-lg md:text-xl lg:text-2xl texto-aparece-delay">
 
                 <p class="mb-5">
-                    Hola
+                    Antes de que pasaras a la galería de trabajos me gustaría comentar un poco sobre ellos en aspecto general.
                 </p>
 
                 <p class="mb-5">
-                    Caracola
+                    Igual te has dado cuenta de que mi perfil es un poco diferente, lo mismo pasa con los trabajos, aquí puedes encontrar algunos de los trabajos con acabado más profesional que he hecho en lo que llevo de carrera.
                 </p>
 
                 <p class="mb-5">
-                    Yi
+                    De hecho algunos son de los trabajos más grandes que hemos realizado. No quería poner muchísimos trabajos, sino elegir los que me parecían más cercanos a encargos reales y con acabado profesional.
                 </p>
 
             </div>

@@ -40,7 +40,7 @@ const character = ref<Character | undefined>(
         </div>
 
         <figure class="figure-quote">
-        <img :src="`/imagines/simpsons/${ character.imago } `" alt="" />
+        <img :src="`/imagenesOptimizadas/${ character.imago2 } `" alt="" />
         </figure>
 
     </div>
@@ -54,6 +54,8 @@ const character = ref<Character | undefined>(
   font-size: 1.875rem;
   line-height: 2.25rem;
   margin-bottom: 1.25rem;
+  color: #3F5620;
+
 }
 
 @media (min-width: 1024px) {
@@ -64,11 +66,11 @@ const character = ref<Character | undefined>(
 }
 
 .arca-quote {
-  background-color: rgb(239 68 68);
+  background-color: rgb(63, 86, 32);
   padding: 1.25rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  border: 1px solid black;
+  border: 1px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -122,16 +122,16 @@ const dias = ref<DateValue>()
               </SelectTrigger>
 
               <SelectContent class="bg-white">
-                <SelectItem value="rescatare">
+                <SelectItem value="rebrand">
                   Rebranding
                 </SelectItem>
-                <SelectItem value="investigare">
+                <SelectItem value="proyecto">
                   Campaña
                 </SelectItem>
-                <SelectItem value="persequi">
+                <SelectItem value="animacion">
                   Animación
                 </SelectItem>
-                <SelectItem value="defendere">
+                <SelectItem value="marketing">
                   Marketing
                 </SelectItem>
               </SelectContent>
