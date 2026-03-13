@@ -167,7 +167,7 @@ onMounted(() => {
                     <span class="text-2xl transition-transform duration-300" :class="{ 'rotate-180': openCard === 1 }"></span>
 
                 </div>
-
+ <!-- comentario -->
                 <transition name="expand">
                     <div v-if="openCard === 1" class="px-6 pb-6 text-lg text-gray-700">
                         Realmente es más un hobbie, me gusta estar y experimentar posiciones que normalmente no podría.
